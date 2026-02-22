@@ -1,6 +1,6 @@
-package book.persistence;
+package org.jiraws.library.book.persistence;
 
-import book.model.BookEntity;
+import org.jiraws.library.book.model.BookEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 

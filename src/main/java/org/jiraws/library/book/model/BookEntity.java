@@ -1,4 +1,4 @@
-package book.model;
+package org.jiraws.library.book.model;
 
 
 import jakarta.persistence.*;
@@ -22,7 +22,13 @@ public class BookEntity {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
    long id;
 
+   String isbn;
+
     String name;
+
+    String description;
+
+    Integer year;
 
     Integer pages;
 }

@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @EntityScan("org.jiraws.library.book.model")
 @EnableJpaRepositories("org.jiraws.library.book.persistence")
-@SpringBootApplication(scanBasePackages ={"org.example.demopro",
-        "org.jiraws.library"} )
+@SpringBootApplication(scanBasePackages ={ "org.jiraws.library"} )
+
 public class DemoProApplication {
 
     static void main ( String[] args ) {
