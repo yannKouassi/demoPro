@@ -49,16 +49,27 @@ public class BookRestController {
     @PostMapping
     public  BookDTO.PostOutput post( @Valid @RequestBody BookDTO.PostInput input ) throws BookCreationException {
 
+        // TODO : Update creat book method
+
         log.info ( input.toString ( ) );
         log.info ( String.valueOf ( input.getBookPages ( )) );
+        log.info ( String.valueOf ( input.getYear ( )) );
+        log.info ( String.valueOf ( input.getDescription ( )) );
+        log.info ( String.valueOf ( input.getIsbn ( )) );
+        log.info ( String.valueOf ( input.getBookName ( )) );
 
-        BookEntity bookEntity= bookService.createBook ( input.getBookName (),input.getBookPages () );
+
+        // TODO : Update Getter issues
+        BookEntity bookEntity= bookService.createBook (input.getIsbn (), input.getBookName () ,input.getBookPages () ,input.getYear (),input.getDescription () );
 
         return BookDTO.PostOutput
                 .builder ()
-                .id ( bookEntity.getId () )
+                .bookId ( bookEntity.getId () )
+                .bookIsbn ( bookEntity.getIsbn () )
                 .bookName ( bookEntity.getName () )
                 .bookPages ( bookEntity.getPages () )
+                .bookYear ( bookEntity.getYear () )
+                .bookDescription ( bookEntity.getDescription () )
                 .build () ;
 
 
